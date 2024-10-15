@@ -1,0 +1,7 @@
+<div
+  (click)="toggleTask()"
+  [ngClass]="task!.completed ? 'task completed' : 'task pending'"
+>
+  {{ task!.title }} -
+  <span>{{ task!.completed ? "Completed" : "Pending" }}</span>
+</div>
