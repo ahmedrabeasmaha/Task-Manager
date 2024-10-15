@@ -14,9 +14,7 @@ import { TaskItemComponent } from '../task-item/task-item.component';
 export class TaskListComponent {
   tasks: Task[] = [];
 
-  constructor(private _taskService: TaskService) {
-    console.log('ahem');
-  } // Inject the service
+  constructor(private _taskService: TaskService) {} // Inject the service
 
   ngOnInit(): void {
     this._taskService.getTasks().subscribe({
@@ -24,7 +22,6 @@ export class TaskListComponent {
       error: (error) => console.error('Error fetching tasks:', error),
       complete: () => console.info('Task fetching completed'),
     });
-    console.log('ahem');
   }
 
   toggleTaskComplete(task: Task) {
